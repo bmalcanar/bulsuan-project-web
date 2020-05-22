@@ -1,5 +1,5 @@
 {
-  "extends": "tslint:recommended",
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
   "rules": {
     "array-type": false,
     "arrow-parens": false,
@@ -49,5 +49,9 @@
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
   },
-  "rulesDirectory": ["codelyzer"]
+  "rulesDirectory": ["codelyzer"],
+  "linterOptions": {
+    "exclude": ["e2e/**", "src/main.ts"],
+    "include": ["src/app/**"]
+  }
 }
