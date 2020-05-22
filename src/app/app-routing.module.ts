@@ -1,22 +1,10 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    children: [
-      {
-        path: '',
-        redirectTo: 'home',
-        pathMatch: 'full',
-      },
-      {
-        path: 'home',
-        loadChildren: './modules/home/home.module#HomeModule',
-      },
-    ],
-    // canActivate: [true]
-  },
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: 'main', loadChildren: './modules/modules.module#ModulesModule' },
+  { path: '**', redirectTo: '/main/home' },
 ];
 
 @NgModule({
